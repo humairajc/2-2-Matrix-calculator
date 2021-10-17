@@ -44,7 +44,10 @@ if(isset($_POST['operator'])){
       } 
       else
       {
-        $c[$row][$col]=$a[$row][$col]*$b[$row][$col];
+          $c[0][0]= $a[0][0]*$b[0][0]+ $a[0][1]*$b[1][0];
+          $c[0][1]= $a[0][0]*$b[0][1]+ $a[0][1]*$b[1][1];
+          $c[1][0]= $a[1][0]*$b[0][0]+ $a[1][1]*$b[1][0];
+          $c[1][1]= $a[1][0]*$b[0][1]+ $a[1][1]*$b[1][1];
       }        
     }   
 }
@@ -59,21 +62,21 @@ if(isset($_POST['operator'])){
     <h2>Lets Build a Matrix Calculator</h2>
     <form method="POST" >
     <lavel><p>Matrix 1 </p></lavel>
-      <input type="number" placeholder="[0][0]" name="arr1_0_0">
-      <input type="number" placeholder="[0][1]" name="arr1_0_1">
+      <input type="number" step="0.01" placeholder="[0][0]" name="arr1_0_0">
+      <input type="number" step="0.01" placeholder="[0][1]" name="arr1_0_1">
     <p>  
-      <input type="number" placeholder="[1][0]" name="arr1_1_0">
-      <input type="number" placeholder="[1][1]" name="arr1_1_1">  
+      <input type="number" step="0.01" placeholder="[1][0]" name="arr1_1_0">
+      <input type="number" step="0.01" placeholder="[1][1]" name="arr1_1_1">  
     </p>  
     <lavel><p>Matrix 2 </p></lavel>
-      <input type="number" placeholder="[0][0]" name="arr2_0_0">
-      <input type="number" placeholder="[0][1]" name="arr2_0_1">
+      <input type="number" step="0.01" placeholder="[0][0]" name="arr2_0_0">
+      <input type="number" step="0.01" placeholder="[0][1]" name="arr2_0_1">
     <p>  
-      <input type="number" placeholder="[1][0]" name="arr2_1_0">
-      <input type="number" placeholder="[1][1]" name="arr2_1_1">  
+      <input type="number" step="0.01" placeholder="[1][0]" name="arr2_1_0">
+      <input type="number" step="0.01" placeholder="[1][1]" name="arr2_1_1">  
     </p> 
     <p>
-        <input type = "submit" value="   +    " name ="operator">
+        <input type = "submit" value="   +   " name ="operator">
         <input type = "submit" value="   -   " name ="operator" >
         <input type = "submit" value="   *   " name ="operator"> 
     </p>
